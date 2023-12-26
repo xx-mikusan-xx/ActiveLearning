@@ -8,7 +8,7 @@ public class DrawGoogleMap : MonoBehaviour
 {
     public float lat = 35.6259034f;
     public float lng = 139.7268499f;
-    public string key = AIzaSyASZcK9k2Xysa8m3ekvg-WD-1s68KtLlXk;
+    public string key = "AIzaSyASZcK9k2Xysa8m3ekvg-WD-1s68KtLlXk";
     public int zoom = 15;
 
     // Google Maps Embed API
@@ -29,13 +29,13 @@ public class DrawGoogleMap : MonoBehaviour
     public void Build()
     {
 
-        // ’†SÀ•W 
+        // ä¸­å¿ƒåº§æ¨™ 
         Url += "center=" + lat + "," + lng;
 
-        // ƒY[ƒ€ƒŒƒxƒ‹
+        // ã‚ºãƒ¼ãƒ ãƒ¬ãƒ™ãƒ«
         Url += "&zoom=" + zoom;
 
-        // ’n}‰æ‘œ‚ÌƒTƒCƒY
+        // åœ°å›³ç”»åƒã®ã‚µã‚¤ã‚º
         Url += "&size=480x480";
 
         if (key != null && key.Length != 0)
@@ -47,7 +47,7 @@ public class DrawGoogleMap : MonoBehaviour
         StartCoroutine(Download(this.Url, tex => addSplatPrototype(tex)));
     }
 
-    /// GoogleMapsAPI‚©‚ç’n}‰æ‘œ‚ğƒ_ƒEƒ“ƒ[ƒh‚·‚é
+    /// GoogleMapsAPIã‹ã‚‰åœ°å›³ç”»åƒã‚’ãƒ€ã‚¦ãƒ³ãƒ­ãƒ¼ãƒ‰ã™ã‚‹
     IEnumerator Download(string url, Action<Texture2D> callback)
     {
         var www = new WWW(url);
@@ -56,7 +56,7 @@ public class DrawGoogleMap : MonoBehaviour
         callback(www.texture);
     }
 
-    /// image‚ÉƒeƒNƒXƒ`ƒƒ‚ğ“\‚è•t‚¯‚é
+    /// imageã«ãƒ†ã‚¯ã‚¹ãƒãƒ£ã‚’è²¼ã‚Šä»˜ã‘ã‚‹
     public void addSplatPrototype(Texture2D tex)
     {
         GetComponent<Image>().sprite = Sprite.Create(tex, new Rect(0, 0, tex.width, tex.height), Vector2.zero);
